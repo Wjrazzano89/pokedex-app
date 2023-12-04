@@ -1,18 +1,20 @@
 let pokemonList = [
-    { name: "Bulbasaur", height: " .7", types: ["grass", "poison"] },
-    { name: "Squirtle", height: " .5", types: ["water"] },
-    { name: "Charmander", height: " .6", types: ["fire"] }
+    { name: "Bulbasaur",
+      height: " .7",
+      types: ["Grass", " Poison"] 
+    },
+    { name: "Squirtle", 
+      height: " .5", 
+      types: ["Water"] 
+    },
+    { name: "Charmander", 
+      height: " .6", 
+    types: ["Fire"] 
+    }
 ]
 
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height < .7 && pokemonList[i].height > .5) {
-        console.log(pokemonList[i].name);
-        document.write(pokemonList[i].name + " - Height:" + pokemonList[i].height + "<br/>")
-    } else if (pokemonList[i].height < .6) {
-        console.log(pokemonList[i].name);
-        document.write(pokemonList[i].name + " - Height:" + pokemonList[i].height + "<br/>" )
-    } else {
-        console.log(pokemonList[i].name);
-        document.write(pokemonList[i].name + " - Height:" + pokemonList[i].height + " (Wow, that's a big Pokemon)" + "<br/>")
-    }
+function myLoopFunction(pokemon) {
+        console.log(pokemon.name + pokemon.height + pokemon.types);
+        document.write("<p>" + pokemon.name + " - Height:" + pokemon.height + " (Type): " + pokemon.types + "</p>")
 }
+pokemonList.forEach(myLoopFunction);
