@@ -40,7 +40,10 @@ var pokemonRepository = (function () {
   button.classList.add("button-class");
   listpokemon.appendChild(button);
   pokemonList.appendChild(listpokemon)
- }
+  button.addEventListener('click', function (event) {
+    console.log(pokemon.name);
+  });
+}
  return {
   add: add,
   getAll: getAll,
@@ -54,6 +57,5 @@ var pokemonRepository = (function () {
  console.log(pokemonRepository.getAll());
 
  pokemonRepository.getAll().forEach(function (pokemon) {
-  
   pokemonRepository.addListItem(pokemon);
-  });
+});
