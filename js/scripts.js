@@ -16,7 +16,9 @@ let pokemonRepository = (function () {
       })();
 
       console.log(pokemonRepository.getAll()); 
-      pokemonRepository.add({ name: 'Pikachu' });
+      pokemonRepository.add({ name: 'Pikachu', height: 0.3,
+      types: ["electric"] });
+      
       console.log(pokemonRepository.getAll());
 
 let pokemonList = [
@@ -35,7 +37,9 @@ let pokemonList = [
 ]
 
 function myLoopFunction(pokemon) {
-        console.log(pokemon.name + pokemon.height + pokemon.types);
-        document.write("<p>" + pokemon.name + " - Height:" + pokemon.height + " (Type): " + pokemon.types + "</p>")
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = ""
+        button.classList.add()
 }
-pokemonList.forEach(myLoopFunction);
+pokemonList.forEach(myLoopFunction)(document.querySelector('.pokemon.list'));
