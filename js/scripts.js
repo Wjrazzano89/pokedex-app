@@ -20,16 +20,19 @@ let pokemonRepository = (function () {
     }
   
     function addListItem(pokemon) {
-      let listContainer = $('.pokemon-list');
-      let listItem = $('<li></li>');
-      let button = $('<button class="btn btn-primary"></button>').text(pokemon.name);
-      listItem.append(button);
-      listContainer.append(listItem);
-  
-      button.on('click', function () {
-        showDetails(pokemon);
-      });
+        let listContainer = $('.pokemon-list');
+        let listItem = $('<li class="row mb-2"></li>'); // Use row class to create gutters
+        let nameDiv = $('<div class="col-2"></div>'); // Use grid column to control spacing
+        let button = $('<button class="btn btn-primary btn-block"></button>').text(pokemon.name);
+        nameDiv.append(button);
+        listItem.append(nameDiv);
+        listContainer.append(listItem);
+    
+        button.on('click', function () {
+            showDetails(pokemon);
+        });
     }
+    
   
     function loadList() {
       return fetch(apiUrl)
