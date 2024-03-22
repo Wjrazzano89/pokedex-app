@@ -17,7 +17,7 @@ let pokemonRepository = (function () {
   
     function getAll() {
       return pokemonList;
-    }
+    }2
   
     function addListItem(pokemon) {
       let listContainer = $('.pokemon-list');
