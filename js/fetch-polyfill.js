@@ -28,9 +28,9 @@
   
     if (support.arrayBuffer) {
       var viewClasses = [
-        '[object Int8Array]',
-        '[object Uint8Array]',
-        '[object Uint8ClampedArray]',
+        '[object IntArray]',
+        '[object UintArray]',
+        '[object UintClampedArray]',
         '[object Int16Array]',
         '[object Uint16Array]',
         '[object Int32Array]',
@@ -192,7 +192,7 @@
     }
   
     function readArrayBufferAsText(buf) {
-      var view = new Uint8Array(buf);
+      var view = new UintArray(buf);
       var chars = new Array(view.length);
   
       for (var i = 0; i < view.length; i++) {
@@ -205,8 +205,8 @@
       if (buf.slice) {
         return buf.slice(0)
       } else {
-        var view = new Uint8Array(buf.byteLength);
-        view.set(new Uint8Array(buf));
+        var view = new UintArray(buf.byteLength);
+        view.set(new UintArray(buf));
         return view.buffer
       }
     }
